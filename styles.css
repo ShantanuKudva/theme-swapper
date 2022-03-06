@@ -1,0 +1,114 @@
+body{
+    --accent-color: orangered;
+    --background-color: white;
+    --text-color: black;
+    --button-text-color: var(--background-color);
+    --transition-delay: 0.7s ;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all var(--transition-delay);
+    overflow: hidden;
+}
+
+body.dark{
+    --accent-color: #d0d066;
+    --background-color: #333;
+    --text-color: white;
+    --button-text-color: var(--background-color);
+    --transition-delay: .7s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.title{
+    margin: 0;
+    margin-bottom: 2rem;
+    font-family: 'Roboto Mono';
+}
+
+.theme-toggle-button{
+    background-color: var(--accent-color);
+    color: var(--button-text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    border: none;
+    outline: none;
+    transition: all var(--transition-delay) ;
+    font-family: 'Roboto Mono';
+}
+
+.theme-toggle-button:hover
+{
+    transform: scale(1.1) translateY(-10px);
+    box-shadow: 0 5px 10px black;
+
+}
+.theme-toggle-button:active{
+    transform: scale(1.1) translateY(-1px);
+    box-shadow: 0 1px 10px black;
+}
+
+.theme-toggle-button .icon{
+    margin-right: 0.5rem;
+}
+
+.sun-moon-container{
+    --rotation: 0;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    height: 200vmin;
+    transform: rotate(var(--rotation));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(calc(var(--rotation)*1deg));
+    transition: all var(--transition-delay);
+}
+
+.sun,.moon{
+    position: absolute;
+    fill: var(--accent-color);
+    transform: scale(2);
+}
+
+.sun{
+    top: 5%;
+}
+
+.moon{
+    bottom: 5%;
+    opacity: 0;
+}
+
+.dark .moon{
+    opacity: 1;
+    transform: scale(2) rotate(180deg);
+   
+}
+
+.dark .sun{
+    opacity: 0;
+}
+
+.footer{
+    position: absolute;
+    bottom: 5%;
+    font-family: 'Roboto Mono';
+}
