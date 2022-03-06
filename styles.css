@@ -95,6 +95,7 @@ body.dark{
 .moon{
     bottom: 5%;
     opacity: 0;
+    transition: all var(--transition-delay);
 }
 
 .dark .moon{
@@ -104,6 +105,7 @@ body.dark{
 }
 
 .dark .sun{
+    transition: all var(--transition-delay);
     opacity: 0;
 }
 
